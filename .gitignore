@@ -1,5 +1,5 @@
 /[Ll]ibrary/
-/[Tt]emp/
+ChatUI/[Tt]emp/
 /[Oo]bj/
 /[Bb]uild/
 
@@ -16,6 +16,9 @@
 
 # Unity3D generated meta files
 *.pidb.meta
+*.log
 
 # Unity3D Generated File On Crash Reports
 sysinfo.txt
+*.sln
+*.log

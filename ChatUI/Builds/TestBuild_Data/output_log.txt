@@ -1,0 +1,111 @@
+Initialize engine version: 5.2.2f1 (3757309da7e7)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 960M      (ID=0x139b)
+    Vendor:   NVIDIA
+    VRAM:     1995 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\PavelPC\Documents\GitHub\UI\ChatUI\Builds\TestBuild_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\PavelPC\Documents\GitHub\UI\ChatUI\Builds\TestBuild_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\PavelPC\Documents\GitHub\UI\ChatUI\Builds\TestBuild_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\PavelPC\Documents\GitHub\UI\ChatUI\Builds\TestBuild_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\PavelPC\Documents\GitHub\UI\ChatUI\Builds\TestBuild_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\PavelPC\Documents\GitHub\UI\ChatUI\Builds\TestBuild_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\PavelPC\Documents\GitHub\UI\ChatUI\Builds\TestBuild_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\PavelPC\Documents\GitHub\UI\ChatUI\Builds\TestBuild_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\PavelPC\Documents\GitHub\UI\ChatUI\Builds\TestBuild_Data\Managed\LitJson.dll (this message is harmless)
+Loading C:\Users\PavelPC\Documents\GitHub\UI\ChatUI\Builds\TestBuild_Data\Managed\LitJson.dll into Unity Child Domain
+Platform assembly: C:\Users\PavelPC\Documents\GitHub\UI\ChatUI\Builds\TestBuild_Data\Managed\System.Core.dll (this message is harmless)
+- Completed reload, in  0.041 seconds
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+Platform assembly: C:\Users\PavelPC\Documents\GitHub\UI\ChatUI\Builds\TestBuild_Data\Managed\System.dll (this message is harmless)
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 15d8 -> priority: 1 
+  Thread -> id: 2fec -> priority: 1 
+username=user1@test.com&password=123456&grant_type=password
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Platform assembly: C:\Users\PavelPC\Documents\GitHub\UI\ChatUI\Builds\TestBuild_Data\Managed\Mono.Security.dll (this message is harmless)
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 3.180164 ms
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 646.
+Total: 0.889388 ms (FindLiveObjects: 0.040660 ms CreateObjectMapping: 0.030001 ms MarkObjects: 0.794646 ms  DeleteObjects: 0.023290 ms)
+
+click
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+user2@test.com
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+user2@test.com
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Hello
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Hello
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Hello
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Hello
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Hello
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Hello
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Hello
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Hello
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Hello
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Hello
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+{"Message":"y very well :). What did end up doing yesterday","Receiver":"user2@test.com"}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+OK
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Hello
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Hello
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Hello
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
