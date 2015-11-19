@@ -7,7 +7,7 @@ namespace UnityScripts
     public class MessageManager : MonoBehaviour
     {
 
-        public int id;
+        public int Id;
         // Use this for initialization
         private Text text;
 

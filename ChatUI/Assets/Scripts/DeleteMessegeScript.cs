@@ -10,20 +10,27 @@ namespace UnityScripts
     public class DeleteMessegeScript : MonoBehaviour
     {
 
-        private float id;
-        private MessageManager messageObj;
+        public int id;
+        public MessageManager messageObj;
         private ApplicationManager appManager;
+        public GameObject parrent;
 
         void Awake()
         {
-            this.messageObj = GetComponentInParent<MessageManager>();
             this.appManager = GameObject.FindGameObjectWithTag("Player").GetComponent<ApplicationManager>();
-            this.id = messageObj.id;
+            parrent = transform.parent.gameObject;
+            this.messageObj = parrent.GetComponent<MessageManager>();            
+            this.id = messageObj.Id;
+        }
+
+        void Update()
+        {
+            this.id = messageObj.Id;
         }
 
         public void DeleteMessegeOnClick()
         {
-            Debug.Log(ServerInfo.GetDeleteMessegesRoute(this.id.ToString()));
+            //Debug.Log(ServerInfo.GetDeleteMessegesRoute(this.id.ToString()));
             var request = WebRequest.Create(ServerInfo.GetDeleteMessegesRoute(this.id.ToString())) as HttpWebRequest;
             request.ContentType = ServerInfo.JsonContetnType;
             request.Headers.Add("Authorization", "Bearer " + this.appManager.Token);

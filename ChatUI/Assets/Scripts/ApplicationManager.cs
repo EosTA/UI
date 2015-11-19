@@ -36,7 +36,7 @@ namespace UnityScipts
             DontDestroyOnLoad(gameObject);
 
             this.currentTime = 0;
-            this.intervalTime = 2;
+            this.intervalTime = 0.5f;
         }
 
         // Update is called once per frame

@@ -58,7 +58,10 @@ namespace UnityScripts
                 var text = message.GetComponentInChildren<Text>();
                 text.text = appManger.messages[i].Message;
                 var id = message.GetComponent<MessageManager>();
-                id.id = appManger.messages[i].Id;
+
+                id.Id = appManger.messages[i].Id;
+                Debug.Log(id.Id);
+                Debug.Log(appManger.messages[i].Id);
             }
 
         }
