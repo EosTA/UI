@@ -10,7 +10,6 @@ namespace UnityScripts
 
         public int id;
         private MessageManager messageObj;
-        private GameObject messageControll;
         private SendMessage messageInput;
         private ApplicationManager appManager;
         private GameObject parrent;
@@ -22,7 +21,6 @@ namespace UnityScripts
             this.messageObj = parrent.GetComponent<MessageManager>();
             this.id = messageObj.Id;
             this.messageInput = GameObject.FindGameObjectWithTag("MSender").GetComponent<SendMessage>();
-            this.messageControll = GameObject.FindGameObjectWithTag("MWindow");
         }
 
         void Update()
