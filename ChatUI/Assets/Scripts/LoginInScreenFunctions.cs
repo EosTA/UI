@@ -23,7 +23,7 @@ namespace UnityScripts
 
             var request = WebRequest.Create(ServerInfo.GetLoginRoute()) as HttpWebRequest;
 
-            request.ContentType = "application/x-www-form-urlencoded";
+            request.ContentType = ServerInfo.StringQueryType;
             request.Method = "POST";
 
             var jsonData = this.MakeLogInEntry().ToString();

@@ -8,14 +8,13 @@ namespace Assets.Scripts.Models
     public static class ServerInfo
     {
         public const string Server = "http://localhost:50619";
+        public const string JsonContetnType = "application/json";
 
         private const string LoginInRoute = "/api/Account/Login";
-
         private const string RegisterRoute = "/api/Account/Register";
-
         private const string MessegesRoute = "api/messages/";
-
         private const string UsersRoute = "/api/users";
+        private const string SendMessageRoute = "/api/messages";
 
         public static string GetLoginRoute()
         {
@@ -35,6 +34,11 @@ namespace Assets.Scripts.Models
         public static string GetUsersRoute()
         {
             return ServerInfo.Server + ServerInfo.UsersRoute;
+        }
+
+        public static string GetSendMessageRoute()
+        {
+            return ServerInfo.Server + ServerInfo.SendMessageRoute;
         }
     }
 }

@@ -29,7 +29,7 @@ namespace UnityScripts
 
         public void OnEnter()
         {
-            var request = WebRequest.Create("http://localhost:50619/api/messages") as HttpWebRequest;
+            var request = WebRequest.Create(ServerInfo.GetSendMessageRoute()) as HttpWebRequest;
 
             request.ContentType = "application/json";
             request.Headers.Add("Authorization", "Bearer " + appManager.Token);

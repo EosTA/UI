@@ -28,12 +28,8 @@ namespace UnityScripts
 
         public void GetConversation()
         {
-            Debug.Log("click");
-
             var userName = text.text;
-            Debug.Log(userName);
             this.appManger.CurrentReciever = userName;
-            Debug.Log(appManger.CurrentReciever);
         }
     }
 }
