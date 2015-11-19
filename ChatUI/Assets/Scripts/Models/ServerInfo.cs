@@ -7,7 +7,7 @@ namespace Assets.Scripts.Models
 {
     public static class ServerInfo
     {
-        public const string Server = "http://localhost:50619";
+        public const string Server = "http://eos-chat.azurewebsites.net";
         public const string JsonContetnType = "application/json";
         public const string StringQueryType = "application/x-www-form-urlencoded";
 
