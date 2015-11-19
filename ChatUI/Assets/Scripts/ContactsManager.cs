@@ -45,7 +45,7 @@ namespace UnityScripts
         private List<string> GetUsersFromSercer()
         {
 
-            var request = WebRequest.Create("http://localhost:50619/api/users") as HttpWebRequest;
+            var request = WebRequest.Create(ServerInfo.GetUsersRoute()) as HttpWebRequest;
             request.ContentType = "application/json";
             request.Headers.Add("Authorization", "Bearer " + accessToken);
             request.Method = "GET";

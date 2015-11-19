@@ -39,7 +39,7 @@ namespace UnityScripts
 
         public void OnRegisterClick()
         {
-            var request = WebRequest.Create("http://localhost:50619/api/Account/Register") as HttpWebRequest;
+            var request = WebRequest.Create(ServerInfo.GetRegisterRoute()) as HttpWebRequest;
 
             request.ContentType = "application/json";
             request.Method = "POST";

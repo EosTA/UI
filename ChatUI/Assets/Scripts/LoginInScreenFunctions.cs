@@ -21,7 +21,7 @@ namespace UnityScripts
         public void LogIn()
         {
 
-            var request = WebRequest.Create("http://localhost:50619/api/Account/Login") as HttpWebRequest;
+            var request = WebRequest.Create(ServerInfo.GetLoginRoute()) as HttpWebRequest;
 
             request.ContentType = "application/x-www-form-urlencoded";
             request.Method = "POST";

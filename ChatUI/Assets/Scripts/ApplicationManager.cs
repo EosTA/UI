@@ -61,7 +61,7 @@ namespace UnityScipts
             Debug.Log("Hello");
             this.messages = new List<MessageTemplate>();
 
-            var request = WebRequest.Create("http://localhost:50619/api/messages/" + this.CurrentReciever + "/") as HttpWebRequest;
+            var request = WebRequest.Create(ServerInfo.GetMessegesRoute(this.CurrentReciever)) as HttpWebRequest;
             request.ContentType = "application/json";
             request.Headers.Add("Authorization", "Bearer " + Token);
             request.Method = "GET";
