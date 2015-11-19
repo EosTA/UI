@@ -114,7 +114,7 @@ namespace UnityScripts
             return new EditMessageModel()
             {
                 Message = this.input.text,
-                IsChangingDate = true
+                IsChangingDate = false
             };
         }
 
