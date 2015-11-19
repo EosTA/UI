@@ -12,38 +12,45 @@ namespace UnityScripts
 {
     public class LoginInScreenFunctions : MonoBehaviour
     {
-        public Text UserName;
-        public Text Password;
+        public InputField UserName;
+        public InputField Password;
+        public Image Error;
         public ApplicationManager appManager;
 
 
         public void LogIn()
         {
 
-            var request = WebRequest.Create(ServerInfo.GetLoginRoute()) as HttpWebRequest;
-
-            request.ContentType = ServerInfo.StringQueryType;
-            request.Method = "POST";
-
-            var jsonData = this.MakeLogInEntry().ToString();
-            Debug.Log(jsonData);
-
-            using (StreamWriter writer = new StreamWriter(request.GetRequestStream()))
+            try
             {
-                writer.Write(jsonData);
-            }
+                var request = WebRequest.Create(ServerInfo.GetLoginRoute()) as HttpWebRequest;
 
-            var response = (HttpWebResponse)request.GetResponse();
+                request.ContentType = ServerInfo.StringQueryType;
+                request.Method = "POST";
 
-            var reader = new StreamReader(response.GetResponseStream());
-            var result = reader.ReadToEnd();
-            reader.Close();
-            var token = JsonMapper.ToObject(result)["access_token"].ToString();
+                var jsonData = this.MakeLogInEntry().ToString();
+                Debug.Log(jsonData);
 
-            appManager.Token = token;
-            if (response.StatusCode == HttpStatusCode.OK)
-            {
+                using (StreamWriter writer = new StreamWriter(request.GetRequestStream()))
+                {
+                    writer.Write(jsonData);
+                }
+
+                var response = (HttpWebResponse)request.GetResponse();
+
+                var reader = new StreamReader(response.GetResponseStream());
+                var result = reader.ReadToEnd();
+                reader.Close();
+                var token = JsonMapper.ToObject(result)["access_token"].ToString();
+
+                appManager.Token = token;
                 Application.LoadLevel("Chat");
+            }
+            catch
+            {
+                this.Error.gameObject.SetActive(true);
+                this.UserName.text = string.Empty;
+                this.Password.text = string.Empty;
             }
 
         }
