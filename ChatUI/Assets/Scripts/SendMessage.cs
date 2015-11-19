@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.UI;
 using System.Net;
 using LitJson;
 using System.IO;
+using System.Linq;
 using Assets.Scripts.Models;
 using System.Collections.Generic;
 
@@ -29,7 +30,20 @@ namespace UnityScripts
 
         void Update()
         {
+            var messages = GameObject.FindGameObjectsWithTag("Message").ToList(); ;
 
+            for (int i = 0; i < messages.Count; i++)
+            {
+                var currentMessage = messages[i];
+                var currentMessageId = currentMessage.GetComponent<MessageManager>().Id;
+
+                if(currentMessageId==this.messageId)
+                {
+                    var image = currentMessage.GetComponent<Image>();
+
+                    image.color = Color.green;
+                }
+            }
         }
 
         public void OnEnter()

@@ -10,6 +10,7 @@ namespace UnityScripts
     {
 
         public int id;
+        private SendMessage mSender;
         private MessageManager messageObj;
         private ApplicationManager appManager;
         public GameObject parrent;
@@ -17,6 +18,7 @@ namespace UnityScripts
         void Awake()
         {
             this.appManager = GameObject.FindGameObjectWithTag("Player").GetComponent<ApplicationManager>();
+            this.mSender = GameObject.FindGameObjectWithTag("MSender").GetComponent<SendMessage>();
             parrent = transform.parent.gameObject;
             this.messageObj = parrent.GetComponent<MessageManager>();            
             this.id = messageObj.Id;
@@ -39,8 +41,10 @@ namespace UnityScripts
             var response = (HttpWebResponse)request.GetResponse();
             if(response.StatusCode == HttpStatusCode.OK)
             {
+                this.mSender.messageId = -1;
                 Destroy(this.transform.parent.gameObject);
             }
+            
          
         }
     }
