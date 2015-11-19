@@ -47,7 +47,7 @@ namespace UnityScripts
         {
 
             var request = WebRequest.Create(ServerInfo.GetUsersRoute()) as HttpWebRequest;
-            request.ContentType = "application/json";
+            request.ContentType = ServerInfo.JsonContetnType;
             request.Headers.Add("Authorization", "Bearer " + accessToken);
             request.Method = "GET";
             request.GetResponse();

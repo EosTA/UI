@@ -60,7 +60,7 @@ namespace UnityScipts
         {
             Debug.Log("Hello");
             this.messages = new List<MessageTemplate>();
-
+            Debug.Log(ServerInfo.GetMessegesRoute(this.CurrentReciever));
             var request = WebRequest.Create(ServerInfo.GetMessegesRoute(this.CurrentReciever)) as HttpWebRequest;
 
             request.ContentType = ServerInfo.JsonContetnType;

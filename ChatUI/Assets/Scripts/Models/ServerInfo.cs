@@ -9,10 +9,11 @@ namespace Assets.Scripts.Models
     {
         public const string Server = "http://localhost:50619";
         public const string JsonContetnType = "application/json";
+        public const string StringQueryType = "application/x-www-form-urlencoded";
 
         private const string LoginInRoute = "/api/Account/Login";
         private const string RegisterRoute = "/api/Account/Register";
-        private const string MessegesRoute = "api/messages/";
+        private const string MessegesRoute = "/api/messages/";
         private const string UsersRoute = "/api/users";
         private const string SendMessageRoute = "/api/messages";
 
@@ -39,6 +40,11 @@ namespace Assets.Scripts.Models
         public static string GetSendMessageRoute()
         {
             return ServerInfo.Server + ServerInfo.SendMessageRoute;
+        }
+
+        public static string GetDeleteMessegesRoute(string messageId)
+        {
+            return ServerInfo.Server + ServerInfo.MessegesRoute + messageId + "/";
         }
     }
 }

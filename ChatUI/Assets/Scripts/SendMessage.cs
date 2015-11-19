@@ -31,7 +31,7 @@ namespace UnityScripts
         {
             var request = WebRequest.Create(ServerInfo.GetSendMessageRoute()) as HttpWebRequest;
 
-            request.ContentType = "application/json";
+            request.ContentType = ServerInfo.JsonContetnType;
             request.Headers.Add("Authorization", "Bearer " + appManager.Token);
             request.Method = "POST";
 

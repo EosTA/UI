@@ -41,7 +41,7 @@ namespace UnityScripts
         {
             var request = WebRequest.Create(ServerInfo.GetRegisterRoute()) as HttpWebRequest;
 
-            request.ContentType = "application/json";
+            request.ContentType = ServerInfo.JsonContetnType;
             request.Method = "POST";
 
             var jsonData = JsonMapper.ToJson(this.MakerRegistrationEntry());
