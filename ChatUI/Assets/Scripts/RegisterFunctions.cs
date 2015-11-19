@@ -11,11 +11,12 @@ namespace UnityScripts
 {
     public class RegisterFunctions : MonoBehaviour
     {
-        public Text FirstName;
-        public Text LastName;
-        public Text UserName;
-        public Text Password;
-        public Text ConfirmPass;
+        public InputField FirstName;
+        public InputField LastName;
+        public InputField UserName;
+        public InputField Password;
+        public InputField ConfirmPass;
+        public Image Error;
 
         private bool ValidateTextField(string text, int minLenght, int maxLenght)
         {
@@ -39,24 +40,33 @@ namespace UnityScripts
 
         public void OnRegisterClick()
         {
-            var request = WebRequest.Create(ServerInfo.GetRegisterRoute()) as HttpWebRequest;
-
-            request.ContentType = ServerInfo.JsonContetnType;
-            request.Method = "POST";
-
-            var jsonData = JsonMapper.ToJson(this.MakerRegistrationEntry());
-            Debug.Log(jsonData);
-            using (StreamWriter writer = new StreamWriter(request.GetRequestStream()))
+            try
             {
-                writer.Write(jsonData);
-            }
+                var request = WebRequest.Create(ServerInfo.GetRegisterRoute()) as HttpWebRequest;
 
-            var response = (HttpWebResponse)request.GetResponse();
+                request.ContentType = ServerInfo.JsonContetnType;
+                request.Method = "POST";
 
-            if (response.StatusCode == HttpStatusCode.OK)
-            {
+                var jsonData = JsonMapper.ToJson(this.MakerRegistrationEntry());
+                using (StreamWriter writer = new StreamWriter(request.GetRequestStream()))
+                {
+                    writer.Write(jsonData);
+                }
+
+                var response = (HttpWebResponse)request.GetResponse();
+
                 Application.LoadLevel("LogIn");
             }
+            catch
+            {
+                this.Error.gameObject.SetActive(true);
+            }
+
+        }
+
+        public void OnBackClick()
+        {
+            Application.LoadLevel("LogIn");
         }
 
         private RegisterInfoModel MakerRegistrationEntry()
