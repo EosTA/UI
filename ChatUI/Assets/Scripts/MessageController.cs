@@ -7,7 +7,6 @@ using System.IO;
 using LitJson;
 using System.Linq;
 using System;
-using UnityScipts;
 
 namespace UnityScripts
 {
@@ -17,7 +16,7 @@ namespace UnityScripts
         public Image MyMessageTemplate;
         public Image OtherMessageTemplate;
         public ApplicationManager appManger;
-        // Use this for initialization
+
         void Awake()
         {
             this.appManger = GameObject.FindGameObjectWithTag("Player").GetComponent<ApplicationManager>();
@@ -30,7 +29,7 @@ namespace UnityScripts
 
         }
 
-        private void GenerateMyMessage()
+        public void GenerateMyMessage()
         {
             appManger.messages.Reverse();
             if (this.transform.childCount == this.appManger.messages.Count)
@@ -60,8 +59,6 @@ namespace UnityScripts
                 var id = message.GetComponent<MessageManager>();
 
                 id.Id = appManger.messages[i].Id;
-                Debug.Log(id.Id);
-                Debug.Log(appManger.messages[i].Id);
             }
 
         }

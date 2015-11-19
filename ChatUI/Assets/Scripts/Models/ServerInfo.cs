@@ -46,5 +46,10 @@ namespace Assets.Scripts.Models
         {
             return ServerInfo.Server + ServerInfo.MessegesRoute + messageId + "/";
         }
+
+        public static string GetEditMessegesRoute(string messageId)
+        {
+            return ServerInfo.Server + ServerInfo.MessegesRoute + messageId + "/";
+        }
     }
 }

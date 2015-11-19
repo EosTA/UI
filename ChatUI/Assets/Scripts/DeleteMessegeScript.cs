@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityScripts;
 using System.Net;
 using Assets.Scripts.Models;
-using UnityScipts;
+using UnityScripts;
 
 namespace UnityScripts
 {
@@ -11,7 +10,7 @@ namespace UnityScripts
     {
 
         public int id;
-        public MessageManager messageObj;
+        private MessageManager messageObj;
         private ApplicationManager appManager;
         public GameObject parrent;
 

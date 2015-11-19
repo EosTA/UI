@@ -6,9 +6,10 @@ using System;
 using System.Net;
 using System.IO;
 using LitJson;
+using System.Linq;
 using Assets.Scripts.Models;
 
-namespace UnityScipts
+namespace UnityScripts
 {
     public class ApplicationManager : MonoBehaviour
     {
@@ -56,11 +57,11 @@ namespace UnityScipts
 
 
 
-        private void GetMessagesFromServer()
+        public void GetMessagesFromServer()
         {
-            Debug.Log("Hello");
+            //Debug.Log("Hello");
             this.messages = new List<MessageTemplate>();
-            Debug.Log(ServerInfo.GetMessegesRoute(this.CurrentReciever));
+            //Debug.Log(ServerInfo.GetMessegesRoute(this.CurrentReciever));
             var request = WebRequest.Create(ServerInfo.GetMessegesRoute(this.CurrentReciever)) as HttpWebRequest;
 
             request.ContentType = ServerInfo.JsonContetnType;
@@ -80,6 +81,8 @@ namespace UnityScipts
             {
                 this.messages.Add(item);
             }
+
+            this.messages.OrderBy(x => x.Id);
         }
 
 

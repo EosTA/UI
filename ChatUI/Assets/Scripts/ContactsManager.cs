@@ -6,7 +6,6 @@ using System.Net;
 using System.IO;
 using LitJson;
 using System.Linq;
-using UnityScipts;
 using Assets.Scripts.Models;
 
 namespace UnityScripts

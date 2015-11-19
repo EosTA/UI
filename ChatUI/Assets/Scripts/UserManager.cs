@@ -2,7 +2,6 @@
 using System.Collections;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-using UnityScipts;
 
 namespace UnityScripts
 {
