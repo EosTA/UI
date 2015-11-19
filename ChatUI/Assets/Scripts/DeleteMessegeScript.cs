@@ -39,7 +39,7 @@ namespace UnityScripts
             var response = (HttpWebResponse)request.GetResponse();
             if(response.StatusCode == HttpStatusCode.OK)
             {
-                Destroy(this.transform.parent);
+                Destroy(this.transform.parent.gameObject);
             }
          
         }
