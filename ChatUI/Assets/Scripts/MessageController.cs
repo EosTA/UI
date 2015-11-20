@@ -7,6 +7,7 @@ using System.IO;
 using LitJson;
 using System.Linq;
 using System;
+using Assets.Scripts.Models;
 
 namespace UnityScripts
 {
@@ -17,9 +18,12 @@ namespace UnityScripts
         public Image OtherMessageTemplate;
         public ApplicationManager appManger;
 
+        private List<MessageTemplate> lastMessages;
+
         void Awake()
         {
             this.appManger = GameObject.FindGameObjectWithTag("Player").GetComponent<ApplicationManager>();
+            this.lastMessages = new List<MessageTemplate>();
         }
 
         // Update is called once per frame
@@ -31,17 +35,20 @@ namespace UnityScripts
 
         public void GenerateMyMessage()
         {
+           
             appManger.messages.Reverse();
-            if (this.transform.childCount == this.appManger.messages.Count)
+            var expect = this.lastMessages.Except(appManger.messages).ToList();
+
+            if (this.transform.childCount != expect.Count)
             {
                 return;
             }
+            //Debug.Log("Refresh");
             var children = new List<GameObject>();
             foreach (Transform child in transform) children.Add(child.gameObject);
             children.ForEach(child => Destroy(child));
             for (int i = 0; i < appManger.messages.Count; i++)
             {
-
                 var mTemplate = appManger.messages[i];
                 Image message;
 
@@ -60,6 +67,8 @@ namespace UnityScripts
 
                 id.Id = appManger.messages[i].Id;
             }
+
+            this.lastMessages = appManger.messages;
 
         }
     }

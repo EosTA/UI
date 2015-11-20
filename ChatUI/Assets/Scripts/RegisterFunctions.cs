@@ -40,21 +40,23 @@ namespace UnityScripts
 
         public void OnRegisterClick()
         {
+            Debug.Log("Hello");
             try
             {
+                Debug.Log(1);
                 var request = WebRequest.Create(ServerInfo.GetRegisterRoute()) as HttpWebRequest;
-
+                Debug.Log(2);
                 request.ContentType = ServerInfo.JsonContetnType;
                 request.Method = "POST";
-
+                Debug.Log(3);
                 var jsonData = JsonMapper.ToJson(this.MakerRegistrationEntry());
                 using (StreamWriter writer = new StreamWriter(request.GetRequestStream()))
                 {
                     writer.Write(jsonData);
                 }
-
+                Debug.Log(4);
                 var response = (HttpWebResponse)request.GetResponse();
-
+                Debug.Log(5);
                 Application.LoadLevel("LogIn");
             }
             catch
@@ -66,6 +68,7 @@ namespace UnityScripts
 
         public void OnBackClick()
         {
+            Debug.Log("Hello");
             Application.LoadLevel("LogIn");
         }
 

@@ -21,7 +21,6 @@ namespace UnityScripts
         public string CurrentReciever;
 
         private float currentTime;
-        private float oldTime;
         private float intervalTime;
         void Awake()
         {
@@ -82,7 +81,7 @@ namespace UnityScripts
                 this.messages.Add(item);
             }
 
-            this.messages.OrderBy(x => x.Id);
+            //this.messages.OrderBy(x => x.Id);
         }
 
 

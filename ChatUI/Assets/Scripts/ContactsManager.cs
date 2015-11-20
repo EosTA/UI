@@ -16,6 +16,9 @@ namespace UnityScripts
         public ApplicationManager appManager;
 
         private string accessToken;
+        private int count;
+        private float currentTime;
+        private float intervalTime;
         // Use this for initialization
         void Awake()
         {
@@ -23,16 +26,32 @@ namespace UnityScripts
             this.accessToken = this.appManager.Token;
 
             this.GenerateUsers(this.GetUsersFromSercer());
+            this.currentTime = 0;
+            this.intervalTime = 0.5f;
         }
 
         // Update is called once per frame
         void Update()
         {
+            this.currentTime += Time.deltaTime;
 
+            if (currentTime >= this.intervalTime)
+            {
+                var userListFromServer = this.GetUsersFromSercer();
+                if(userListFromServer.Count!=this.count)
+                {
+                    this.GenerateUsers(userListFromServer);
+                }
+                this.currentTime = 0;
+            }
         }
 
         private void GenerateUsers(List<string> userNames)
         {
+            var children = new List<GameObject>();
+            foreach (Transform child in transform) children.Add(child.gameObject);
+            children.ForEach(child => Destroy(child));
+
             foreach (var item in userNames)
             {
                 var user = Instantiate(UserModel);
@@ -44,7 +63,6 @@ namespace UnityScripts
 
         private List<string> GetUsersFromSercer()
         {
-
             var request = WebRequest.Create(ServerInfo.GetUsersRoute()) as HttpWebRequest;
             request.ContentType = ServerInfo.JsonContetnType;
             request.Headers.Add("Authorization", "Bearer " + accessToken);
@@ -59,8 +77,9 @@ namespace UnityScripts
 
             var resultJ = JsonMapper.ToObject<List<UserModel>>(result);
 
-            return resultJ.Select(x => x.UserName).ToList();
-
+            var userList = resultJ.Select(x => x.UserName).ToList();
+            this.count = userList.Count;
+            return userList;
         }
     }
 }
